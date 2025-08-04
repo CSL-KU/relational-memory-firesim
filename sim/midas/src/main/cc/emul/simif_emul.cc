@@ -215,7 +215,7 @@ uint32_t simif_emul_t::read(size_t addr) {
   wait_read(*master, &data);
   return data;
 }
-
+#include <fstream>
 #define MAX_LEN 255
 
 size_t simif_emul_t::CPUManagedStreamIOImpl::cpu_managed_axi4_read(
@@ -233,6 +233,8 @@ size_t simif_emul_t::CPUManagedStreamIOImpl::cpu_managed_axi4_read(
     addr += (part_len + 1) * beat_bytes;
     data += (part_len + 1) * beat_bytes;
   }
+
+
   return size;
 }
 

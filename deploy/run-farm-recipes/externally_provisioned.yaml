@@ -65,7 +65,7 @@ args:
 
         - one_fpga_spec:
             num_fpgas: 1
-            num_metasims: 0
+            num_metasims: 1
             use_for_switch_only: false
 
         - one_fpgas_spec:

@@ -2,7 +2,7 @@
 #include "core/simif.h"
 
 #include <cassert>
-
+#include <fstream>
 using namespace CPUManagedStreams;
 
 /**
@@ -40,8 +40,10 @@ size_t CPUManagedStreams::CPUToFPGADriver::push(void *src,
   auto push_bytes = push_beats * fpga_buffer_width_bytes();
   auto bytes_written =
       cpu_managed_axi4_write(dma_addr(), (char *)src, push_bytes);
-  assert(bytes_written == push_bytes);
 
+
+ // printf("bytes_written %lu, push_bytes %lu\n", bytes_written, push_bytes);
+  assert(bytes_written == push_bytes);
   return bytes_written;
 }
 
@@ -85,6 +87,8 @@ size_t CPUManagedStreams::FPGAToCPUDriver::pull(void *dest,
   auto pull_beats = std::min(count, num_beats);
   auto pull_bytes = pull_beats * fpga_buffer_width_bytes();
   auto bytes_read = cpu_managed_axi4_read(dma_addr(), (char *)dest, pull_bytes);
+
+
   assert(bytes_read == pull_bytes);
   return bytes_read;
 }
