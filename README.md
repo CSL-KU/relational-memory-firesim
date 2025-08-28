@@ -1,6 +1,6 @@
 # Setup
 
-Follow the Xilinx VCU118 XDMA-based Getting Started Guide from [https://docs.fires.im/en/1.17.1 ](https://docs.fires.im/en/1.18.0/)(FireSim 1.18.0 docs).
+Follow the Xilinx VCU118 XDMA-based Getting Started Guide from [https://docs.fires.im/en/1.18.0 ](https://docs.fires.im/en/1.18.0/)(FireSim 1.18.0 docs).
 
 Instead of cloning the official FireSim repo, clone this repo. During repo setup, avoid overwriting the .yaml files in deploy/ . To avoid this, avoid the following command in the setup:
 
